@@ -96,7 +96,7 @@ def redraw_window(players, balls, game_time, score):
 	# draw score
 	text = TIME_FONT.render("Score: " + str(round(score)),1,(0,0,0))
 	WIN.blit(text,(10,15 + text.get_height()))
-
+############Codigo de Hill climbing #####################################333
 def randomSolution(balls_distances):
 	bolas = list(range(len(balls_distances)))
 	solution = []
@@ -187,18 +187,9 @@ def main(name):
 			distances.append(round(dist))
 		balls_distances.append(distances)
 		distances = []
-	################TESTEO
-	diccc= {}
-	listula = []
-	diccc[0] = [['a',32],['b',45]]
-	for i in range(10):
-		listula.append([i,i+1])
-	print(listula)
-
-	print(diccc[0])
-	######################	
+	
 	ruta_candidata = hillClimbing(balls_distances)
-	for i in range(1):	
+	for i in range(5):	
 		route = hillClimbing(balls_distances)
 		if ruta_candidata[1] > route[1]:
 			ruta_candidata = route
